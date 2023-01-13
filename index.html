@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MovieApp</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap&subset=latin-ext">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/movie-info.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/owl.carousel.css">
+</head>
+
+<body>
+    <div class="l-container">
+        <div class="c-search">
+            <img class="c-search__logo" src="./assets/img/logo.svg">
+            <form class="c-search__form">
+                <input class="c-search__input t" type="text" placeholder="Type in a movie title...">
+                <button class="c-search__btn t4" type="submit">
+                    <span class=c-search__btn-label>Find</span>
+                    <span class="c-search__btn--processing">
+                        <b class="c-search__btn--dot"></b>
+                        <b class="c-search__btn--dot"></b>
+                        <b class="c-search__btn--dot"></b>
+                    </span>
+                </button>
+            </form>
+            <ul class="c-search__list t4"></ul>
+        </div>
+    </div>
+    </div>
+
+    <div class="container hidden" id="container">
+        <div class="movie-info">
+            <div class="x-mark" id="x_mark">
+                <img src="./assets/img/x-mark.png" alt="x-mark">
+            </div>
+            <div class="movie-info-title">
+                <h1 class="title t1" id="title"></h1>
+                <div class="rating t3">
+                    <img src="./assets/img/star.jpg" alt="rating_star" id="star">
+                    <h2 id="rating"></h2>
+                </div>
+            </div>
+            <div class="movie-info-main">
+                <img src="" alt="movie_poster" id="poster">
+                <div class="details-overwiew t">
+                    <ul class="details">
+                        <li id="director"></li>
+                        <li id="genre"></li>
+                        <li id="release"></li>
+                    </ul>
+                    <p id="overview">
+                    </p>
+                </div>
+            </div>
+            <div class="movie-info-cast">
+                <h2>CAST: </h2>
+                <div class="cast-carousel" id="cast-div">
+                    <div class="owl-carousel owl-theme cast" id="cast">
+                    </div>
+                </div>
+            </div>
+            <div class="movie-info-trailer" id="info_trailer">
+                <h2>WATCH THE TRAILER:</h2>
+                <div class="trailer" id="trailer">
+                    <a class="play_trailer" href="" id="play_trailer" target="_blank"></a>
+                    <h3 class="trailer_title" id="trailer_title"></h3>
+                </div>
+            </div>
+            <div class="movie-info-similar" id="info_similar">
+                <h2>SIMILAR MOVIES:</h2>
+                <div class="images-carousel" id="similar-div">
+                    <div class="owl-carousel owl-theme similar" id="similar">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./assets/js/owl.carousel.js"></script>
+</body>
+
+</html>

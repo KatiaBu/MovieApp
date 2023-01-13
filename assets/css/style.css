@@ -1,0 +1,229 @@
+/* Global styles */
+
+:root {
+    --font: 'Quicksand', sans-serif;
+    --color: #78c7d2;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: sans-serif;
+    background: black;
+}
+
+/* Typography styles */
+
+.t1 {
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 5rem;
+}
+
+.t2 {
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.t3 {
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.t4 {
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+}
+
+.t {
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+/* Homepage */
+
+.l-container {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+    background-image: url(../img/pattern.svg);
+    background-size: 35%;
+}
+
+.c-search {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    width: 50vw;
+    background: #b7b7b7;
+    padding: 3.5rem 2rem;
+}
+
+.c-search__logo {
+    width: 80%;
+    align-self: center;
+    padding-bottom: 2rem;
+}
+
+.c-search__form {
+    padding: 0rem 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.c-search__input {
+    flex: 1 1 80%;
+    padding: 0.5rem;
+    border: 0.15rem solid white;
+}
+
+ /* Search button */
+
+.c-search__btn {
+    flex: 1 1 20%;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    color: white;
+    background-color: #222;
+}
+
+.c-search__btn:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 200%;
+    width: 100%;
+    background: var(--color);
+    transition: all .5s ease-in-out;
+    transform: translateX(-100%);
+}
+
+.c-search__btn:hover:after{
+    transform: translateX(0%);
+}
+
+.c-search__btn-label{
+    position: relative; 
+    z-index: 1;
+}
+
+@keyframes stretch {
+    0% {
+        transform: scale(0.5);
+        background-color: gray;
+   }
+    50% {
+        background-color: white;
+   }
+    100% {
+        transform: scale(1);
+        background-color: white;
+   }
+}
+
+.c-search__btn.btn--loading {
+    font-size: 0;
+}
+.c-search__btn.btn--loading .c-search__btn--processing {
+    display: inline-flex;
+}
+.c-search__btn.btn--loading .c-search__btn--dot {
+    animation-direction: alternate;
+    animation-duration: 0.5s;
+    animation-fill-mode: none;
+    animation-iteration-count: infinite;
+    animation-name: stretch;
+    animation-play-state: running;
+    animation-timing-function: ease-out;
+    border-radius: 100%;
+    display: block;
+    height: 0.4rem;
+    width: 0.4rem;
+    animation-delay: 0.1s;
+    margin: 0 0.4rem;
+    z-index: 1;
+}
+.c-search__btn.btn--loading .c-search__btn--dot:first-child {
+    animation-delay: 0s;
+    margin: 0;
+}
+.c-search__btn.btn--loading .c-search__btn--dot:last-child {
+    animation-delay: 0.2s;
+    margin: 0;
+}
+
+.c-search__btn .c-search__btn--processing {
+    display: none;
+}
+
+/* Results list */
+
+.c-search__list {
+    max-width: 90vw;
+    padding: 0 2rem;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-items: stretch;
+    flex-flow: column;
+}
+
+.c-search__item {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    background: white;
+    transition: all 0.2s;
+    filter: grayscale(1);
+}
+
+.c-search__item:hover {
+    filter: grayscale(0);
+}
+
+.c-search__item-title {
+    flex: 4 1 0;
+    text-align: center;
+    padding: 1rem;
+}
+
+.c-search__item-year {
+    flex: 1 1 0;
+    align-self: stretch;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    padding: 1rem;
+    background: #222;
+}
+
+._inner-span {
+    color: white;
+}
+
+.c-search__item-img {
+    order: -1;
+}
